@@ -1,0 +1,56 @@
+<ModOps>
+	<ModOp Type="add" Path="/TextExport/Texts">
+	<!--ITEMS-->    
+	<Text>
+		<GUID>1800000302</GUID>
+		<Text>Holzspahn</Text>
+	</Text>
+	<Text>
+		<GUID>1800000312</GUID>
+		<Text>Gehäckseltes Holzgut das verwendet wird, um Pellets herzustellen.</Text>
+	</Text>
+	<Text>
+		<GUID>1800000303</GUID>
+		<Text>Pallets</Text>
+	</Text>
+	<Text>
+		<GUID>1800000313</GUID>
+		<Text>Diese Pellets sind ein reichhaltiger Energieträger die genutzt werden, um durch Verbrennung im Heizkraftwerk effizient Energie zu erzeugen.</Text>
+	</Text>
+	<!--CHAIN-->
+	<Text>
+		<GUID>1800000304</GUID>
+		<Text>Energieheizkraftwerk</Text>
+	</Text>
+	<Text>
+		<GUID>1800000314</GUID>
+		<Text>Zeigt die Produktionskette, die nötig ist, um ein effizientes Energieheizkraftwerk..</Text>
+	</Text>
+	<!--BUILDINGS-->
+	<Text>
+		<GUID>1800000305</GUID>
+		<Text>Holzhäxelwerk</Text>
+	</Text>
+	<Text>
+		<GUID>1800000315</GUID>
+		<Text>Stellt hehäckseltes Holzgut her, das verwendet wird, um Pellets herzustellen.</Text>
+	</Text> 
+	<Text>
+		<GUID>1800000306</GUID>
+		<Text>Pellets Presse</Text>
+	</Text>
+	<Text>
+		<GUID>1800000316</GUID>
+		<Text>Verarbeitet Holzspahn und Kohle zu festen Pellets, die dazu genutzt werden um das  Energieheizkraftwerk zu betreiben.</Text>
+	</Text>
+	<Text>
+		<GUID>1800000307</GUID>
+		<Text>Energie Heizkraftwerk</Text>
+	</Text>
+	<Text>
+		<GUID>1800000317</GUID>
+		<Text>Verbraucht Pellets um mit hitze Energy zu erzeugen und umliegende Gebäude zu versorgen. Diese neue Technologie ist zwar teuer aber effizient.</Text>
+	</Text>
+	</ModOp>
+</ModOps>
+

@@ -1,0 +1,782 @@
+<!--
+##########################################################
+Mod by:		 					DonnyBresko
+Date: 								23.05.2021
+Version:							1.1
+GUID-Range:					1800000300 - 1800000309
+My GUID-Range:				1800000100 - 1800009999
+Special Thanks:   			Fishboss, Taubenangriff, Momper14
+Visit Discord:					http://
+##########################################################
+-->
+<ModOps>
+<!--##################################################################################################################			UNLOCK/UNDHIDE																	##-->
+<ModOp Type="addNextSibling" GUID="130218">																																									<!--UNHIDE																				##-->
+	<Asset>
+		<Template>Trigger</Template>
+		<Values>
+			<Standard>
+				<GUID>1800000300</GUID>
+				<Name>mod_greenenergy_unlock 1.0</Name>
+				<IconFilename>data/ui/2kimages/main/profiles/resident_tier04.png</IconFilename>
+			</Standard>
+			<Trigger>
+				<TriggerCondition>
+					<IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+					<Values>
+					<Condition />
+					<ConditionAlwaysTrue />
+					</Values>
+				</TriggerCondition>
+				<TriggerActions>
+					<Item>
+						<TriggerAction>
+							<Template>ActionUnlockAsset</Template>
+							<Values>
+								<Action />
+								<ActionUnlockAsset>
+									<UnlockAssets>
+										<Item>
+											<Asset>1800000302</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000303</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000304</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000305</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000306</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000307</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000308</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000309</Asset>
+										</Item>
+									</UnlockAssets>
+									<UnhideAssets>
+										<Item>
+											<Asset>1800000302</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000303</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000304</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000305</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000306</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000307</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000308</Asset>
+										</Item>
+										<Item>
+											<Asset>1800000309</Asset>
+										</Item>
+									</UnhideAssets>
+								</ActionUnlockAsset>
+							</Values>
+						</TriggerAction>
+					</Item>
+				</TriggerActions>
+			</Trigger>
+			<TriggerSetup />
+		</Values>
+	</Asset>
+</ModOp>
+<!--###########################################################################################################################################################################-->
+<!--##################################################################################################################			BUILDMENU AND PRODUCTION CHAIN									##-->
+<ModOp Type="addNextSibling" GUID='15039'>																																									<!--PRODUKTIONS KETTE														##-->
+	<Asset>
+		<Template>ProductionChain</Template>
+		<Values>
+			<Standard>
+				<GUID>1800000304</GUID>
+				<Name>tamplate chain</Name>
+				<IconFilename>data/modgraphics/icons/electric_green.png</IconFilename>
+				<InfoDescription>1800000314</InfoDescription>
+			</Standard>
+			<ProductionChain>
+				<Building>1800000307</Building><!--POWERPLANT-->
+				<Tier1>
+					<Item>
+						<Building>1800000306</Building><!--PALLET PROCESSING-->
+						<Tier2>
+							<Item>
+								<Building>1800000305</Building><!--WOOD CHIPS PROCESSING-->
+								<Tier3>
+									<Item>
+										<Building>1010266</Building><!--WOOD -->
+									</Item>
+								</Tier3>
+							</Item>
+							<Item>
+								<Building>1010304</Building><!--COAL -->
+							</Item>
+						</Tier2>
+					</Item>
+				</Tier1>
+			</ProductionChain>
+			<Locked />
+			<Text>
+				<LocaText>
+					<English>
+						<Text>Burning Powerplant</Text>
+						<Status>Exported</Status>
+						<ExportCount>2</ExportCount>
+					</English>
+				</LocaText>
+				<LineID>14882</LineID>
+			</Text>
+		</Values>
+	</Asset>
+</ModOp>
+<ModOp Type="add" GUID='25000191' Path="/Values/ConstructionCategory/BuildingList">																								<!--BUILDING MENU TIER															##-->
+	<Item>
+		<Building>1800000304</Building>
+	</Item>
+	<Item>
+		<Building>1800000308</Building>
+	</Item>
+</ModOp>
+<ModOp Type="add" GUID='500944' Path="/Values/ConstructionCategory/BuildingList">																									<!--BUILDING MENU CATEGORIE											##-->
+	<Item>
+		<Building>1800000304</Building>
+	</Item>
+	<Item>
+		<Building>1800000308</Building>
+	</Item>
+</ModOp>
+<!--###########################################################################################################################################################################-->
+<!--##################################################################################################################			NEW ITEMS																				##-->
+<ModOp Type="addNextSibling" GUID='11703'>																																									<!--ADD NEW ITEM [PALLETS]												##-->
+	<Asset>
+		<Template>Product</Template>
+		<Values>
+			<Standard>
+				<GUID>1800000303</GUID>
+				<Name>Pallets</Name>
+				<IconFilename>data/modgraphics/icons/pallets.png</IconFilename>
+				<InfoDescription>1800000313</InfoDescription>
+			</Standard>
+			<Text>
+				<LocaText>
+					<English>
+						<Text>Pellets</Text>
+						<Status>Exported</Status>
+						<ExportCount>1</ExportCount>
+					</English>
+				</LocaText>
+				<LineID>35148</LineID>
+			</Text>
+			<Locked />
+			<Product>
+				<StorageLevel>Building</StorageLevel>
+				<ProductCategory>11703</ProductCategory>
+				<BasePrice>482</BasePrice>
+				<CivLevel>2</CivLevel>
+				<AssociatedRegion>Moderate</AssociatedRegion>
+			</Product>
+			<ExpeditionAttribute>
+				<BaseMorale>25</BaseMorale>
+				<ExpeditionAttributes>
+					<Item>
+						<Attribute>Crafting</Attribute>
+						<Amount>35</Amount>
+					</Item>
+				</ExpeditionAttributes>
+			</ExpeditionAttribute>
+		</Values>
+	</Asset>
+</ModOp>
+<ModOp Type="addNextSibling" GUID='11703'>																																									<!--ADD NEW ITEM [WOOD CHIPS]										##-->
+	<Asset>
+		<Template>Product</Template>
+		<Values>
+			<Standard>
+				<GUID>1800000302</GUID>
+				<Name>Wood Chips</Name>
+				<IconFilename>data/modgraphics/icons/holzspahn.png</IconFilename>
+				<InfoDescription>1800000312</InfoDescription>
+			</Standard>
+			<Text>
+				<LocaText>
+					<English>
+						<Text>Wood Chips</Text>
+						<Status>Exported</Status>
+						<ExportCount>1</ExportCount>
+					</English>
+				</LocaText>
+				<LineID>35148</LineID>
+			</Text>
+			<Locked />
+			<Product>
+				<StorageLevel>Building</StorageLevel>
+				<ProductCategory>11703</ProductCategory>
+				<BasePrice>482</BasePrice>
+				<CivLevel>2</CivLevel>
+				<AssociatedRegion>Moderate</AssociatedRegion>
+			</Product>
+			<ExpeditionAttribute>
+				<ExpeditionAttributes>
+					<Item>
+						<Attribute>Crafting</Attribute>
+						<Amount>5</Amount>
+					</Item>
+				</ExpeditionAttributes>
+			</ExpeditionAttribute>
+		</Values>
+	</Asset>
+</ModOp>
+<ModOp Type="add" GUID='120055' Path="/Values/ProductStorageList/ProductList">																										<!--ADD NEW ITEMS TO STORAGE-LIST								##-->
+	<Item>
+		<Product>1800000302</Product>
+	</Item>
+	<Item>
+		<Product>1800000303</Product>
+	</Item>
+</ModOp>
+<ModOp Type="add" GUID='502004,502010,502017,502024,502049,501958' Path="/Values/ProductList/List">																<!--ADD [PALLETS] TO PRODUCT-LIST									##-->
+	<Item>
+		<Product>1800000303</Product>
+	</Item>
+</ModOp>
+<ModOp Type="add" GUID='502020,502066,502043,501960' Path="/Values/ProductList/List">																							<!--ADD [WOOD CHIPS] TO PRODUCT-LIST						##-->
+	<Item>
+		<Product>1800000302</Product>
+	</Item>
+</ModOp>
+<!--###########################################################################################################################################################################-->
+<!--##################################################################################################################			NEW BUILDINGS																		##-->
+<ModOp Type="addNextSibling" GUID='1010280'>																																								<!--WOOD CHIPS PRODUKTION											##-->
+	<Asset>
+		<Template>FactoryBuilding7</Template>
+		<Values>
+			<Standard>
+				<GUID>1800000305</GUID>
+				<Name>processing_07_wood_chips (Wood Chips Processing)</Name>
+				<IconFilename>data/modgraphics/icons/holzspahn.png</IconFilename>
+				<InfoDescription>1800000315</InfoDescription>
+			</Standard>
+			<Building>
+				<BuildModeRandomRotation>90</BuildModeRandomRotation>
+				<AssociatedRegions>Moderate</AssociatedRegions>
+			</Building>
+			<Blocking />
+			<Cost>
+				<Costs>
+					<Item>
+						<Ingredient>1010017</Ingredient>
+						<Amount>1000</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010196</Ingredient>
+						<Amount>75</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010205</Ingredient>
+						<Amount>15</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010218</Ingredient>
+					</Item>
+					<Item>
+						<Ingredient>1010207</Ingredient>
+					</Item>
+					<Item>
+						<Ingredient>1010202</Ingredient>
+					</Item>
+				</Costs>
+			</Cost>
+			<Object>
+				<Variations>
+					<Item>
+						<Filename>data/graphics/buildings/production/factory_03/factory_03.cfg</Filename>
+					</Item>
+				</Variations>
+			</Object>
+			<Mesh />
+			<Selection>
+				<ParticipantMessageArcheType>Resident_tier03_atWork</ParticipantMessageArcheType>
+				<Colors>
+					<WeakSelectionColorType>NoColor</WeakSelectionColorType>
+				</Colors>
+			</Selection>
+			<Text>
+				<LocaText>
+					<English>
+						<Text>Pallets Workshop</Text>
+						<Status>Exported</Status>
+						<ExportCount>1</ExportCount>
+					</English>
+				</LocaText>
+				<LineID>5285</LineID>
+			</Text>
+			<Constructable />
+			<Locked />
+			<SoundEmitter>
+				<ActiveSounds>
+					<Item>
+						<Sound>216883</Sound>
+					</Item>
+					<Item>
+						<Sound>235835</Sound>
+					</Item>
+				</ActiveSounds>
+			</SoundEmitter>
+			<FeedbackController />
+			<Infolayer />
+			<UpgradeList />
+			<RandomDummySpawner />
+			<Factory7 />
+			<FactoryBase>
+				<FactoryInputs>
+					<Item>
+						<Product>120008</Product>
+						<Amount>1</Amount>
+						<StorageAmount>4</StorageAmount>
+					</Item>
+				</FactoryInputs>
+				<FactoryOutputs>
+					<Item>
+						<Product>1800000302</Product>
+						<Amount>1</Amount>
+						<StorageAmount>4</StorageAmount>
+					</Item>
+				</FactoryOutputs>
+				<CycleTime>60</CycleTime>
+			</FactoryBase>
+			<LogisticNode />
+			<AmbientMoodProvider>
+				<DynamicEnvironmentType>None</DynamicEnvironmentType>
+			</AmbientMoodProvider>
+			<Maintenance>
+				<Maintenances>
+					<Item>
+						<Product>1010017</Product>
+						<Amount>85</Amount>
+					</Item>
+					<Item>
+						<Product>1010116</Product>
+						<Amount>15</Amount>
+					</Item>
+				</Maintenances>
+			</Maintenance>
+			<Attackable>
+				<MaximumHitPoints>3500</MaximumHitPoints>
+				<SelfHealPerHealTick>4</SelfHealPerHealTick>
+			</Attackable>
+			<Pausable />
+			<IncidentInfectable>
+				<Infectable>
+					<Explosion>
+						<Base>0</Base>
+						<Escalated>0</Escalated>
+					</Explosion>
+				</Infectable>
+				<Explosion>
+					<ExplosionCoreDamage>50</ExplosionCoreDamage>
+					<DamageExplosionChance>0</DamageExplosionChance>
+				</Explosion>
+				<IncidentInfectionChanceFactors>
+					<Fire>
+						<DensityDistance>10</DensityDistance>
+						<FactoryProductivityFactor>0.1</FactoryProductivityFactor>
+						<FactoryUndertimeFactor>0.05</FactoryUndertimeFactor>
+					</Fire>
+					<Riot>
+						<FactoryOvertimeFactor>0.4</FactoryOvertimeFactor>
+						<FactoryUndertimeFactor>0.2</FactoryUndertimeFactor>
+						<FactoryHappinessFactor>0.2</FactoryHappinessFactor>
+						<HappinessThreshold>20</HappinessThreshold>
+					</Riot>
+				</IncidentInfectionChanceFactors>
+			</IncidentInfectable>
+			<Electric>
+            	<BoostedByElectricity>0</BoostedByElectricity>
+            </Electric>
+			<Culture>
+				<CultureType>Culture</CultureType>
+			</Culture>
+			<ItemGenerator />
+			<QuestObject />
+		</Values>
+	</Asset>
+</ModOp>
+<ModOp Type="addNextSibling" GUID='1010280'>																																								<!--PALLETS PRODUKTION													##-->
+	<Asset>
+		<Template>FactoryBuilding7</Template>
+		<Values>
+			<Standard>
+				<GUID>1800000306</GUID>
+				<Name>processing_08_pallets (Pallets Processing)</Name>
+				<IconFilename>data/modgraphics/icons/pallets.png</IconFilename>
+				<InfoDescription>1800000316</InfoDescription>
+			</Standard>
+			<Building>
+				<BuildModeRandomRotation>90</BuildModeRandomRotation>
+				<AssociatedRegions>Moderate</AssociatedRegions>
+			</Building>
+			<Blocking />
+			<Cost>
+				<Costs>
+					<Item>
+						<Ingredient>1010017</Ingredient>
+						<Amount>22000</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010196</Ingredient>
+						<Amount>150</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010205</Ingredient>
+						<Amount>25</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010218</Ingredient>
+						<Amount>15</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010207</Ingredient>
+						<Amount>10</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010202</Ingredient>
+						<Amount>8</Amount>
+					</Item>
+				</Costs>
+			</Cost>
+			<Object>
+				<Variations>
+					<Item>
+						<Filename>data/graphics/buildings/production/processing_07/processing_07.cfg</Filename>
+					</Item>
+				</Variations>
+			</Object>
+			<Mesh />
+			<Selection>
+				<ParticipantMessageArcheType>Resident_tier03_atWork</ParticipantMessageArcheType>
+				<Colors>
+					<WeakSelectionColorType>NoColor</WeakSelectionColorType>
+				</Colors>
+			</Selection>
+			<Text>
+				<LocaText>
+					<English>
+						<Text>Pallets Workshop</Text>
+						<Status>Exported</Status>
+						<ExportCount>1</ExportCount>
+					</English>
+				</LocaText>
+				<LineID>5285</LineID>
+			</Text>
+			<Constructable />
+			<Locked />
+			<SoundEmitter>
+				<ActiveSounds>
+					<Item>
+						<Sound>216883</Sound>
+					</Item>
+					<Item>
+						<Sound>235835</Sound>
+					</Item>
+				</ActiveSounds>
+			</SoundEmitter>
+			<FeedbackController />
+			<Infolayer />
+			<UpgradeList />
+			<RandomDummySpawner />
+			<Factory7 />
+			<FactoryBase>
+				<FactoryInputs>
+					<Item>
+						<Product>1010226</Product>
+						<Amount>1</Amount>
+						<StorageAmount>4</StorageAmount>
+					</Item>
+					<Item>
+						<Product>1800000302</Product>
+						<Amount>1</Amount>
+						<StorageAmount>4</StorageAmount>
+					</Item>
+				</FactoryInputs>
+				<FactoryOutputs>
+					<Item>
+						<Product>1800000303</Product>
+						<Amount>1</Amount>
+						<StorageAmount>4</StorageAmount>
+					</Item>
+				</FactoryOutputs>
+				<CycleTime>90</CycleTime>
+			</FactoryBase>
+			<LogisticNode />
+			<AmbientMoodProvider>
+				<DynamicEnvironmentType>None</DynamicEnvironmentType>
+			</AmbientMoodProvider>
+			<Maintenance>
+				<Maintenances>
+					<Item>
+						<Product>1010017</Product>
+						<Amount>150</Amount>
+					</Item>
+					<Item>
+						<Product>1010116</Product>
+						<Amount>25</Amount>
+					</Item>
+				</Maintenances>
+			</Maintenance>
+			<Attackable>
+				<MaximumHitPoints>3500</MaximumHitPoints>
+				<SelfHealPerHealTick>4</SelfHealPerHealTick>
+			</Attackable>
+			<Pausable />
+			<IncidentInfectable>
+				<Infectable>
+					<Explosion>
+						<Base>0</Base>
+						<Escalated>0</Escalated>
+					</Explosion>
+				</Infectable>
+				<Explosion>
+					<ExplosionCoreDamage>50</ExplosionCoreDamage>
+					<DamageExplosionChance>0</DamageExplosionChance>
+				</Explosion>
+				<IncidentInfectionChanceFactors>
+					<Fire>
+						<DensityDistance>10</DensityDistance>
+						<FactoryProductivityFactor>0.1</FactoryProductivityFactor>
+						<FactoryUndertimeFactor>0.05</FactoryUndertimeFactor>
+					</Fire>
+					<Riot>
+						<FactoryOvertimeFactor>0.4</FactoryOvertimeFactor>
+						<FactoryUndertimeFactor>0.2</FactoryUndertimeFactor>
+						<FactoryHappinessFactor>0.2</FactoryHappinessFactor>
+						<HappinessThreshold>20</HappinessThreshold>
+					</Riot>
+				</IncidentInfectionChanceFactors>
+			</IncidentInfectable>
+			<Electric>
+            	<BoostedByElectricity>0</BoostedByElectricity>
+            </Electric>
+			<Culture>
+				<CultureType>Culture</CultureType>
+			</Culture>
+			<ItemGenerator />
+			<QuestObject />
+		</Values>
+	</Asset>
+</ModOp>
+<ModOp Type="addNextSibling" GUID='117547'>																																									<!--GREEN POWERPLANT														##-->
+	<Asset>
+		<Template>PowerplantBuilding</Template>
+		<Values>
+			<Standard>
+				<GUID>1800000307</GUID>
+				<Name>electricity_04 (Pellets Power Plant)</Name>
+				<IconFilename>data/modgraphics/icons/electric_green.png</IconFilename>
+				<InfoDescription>1800000317</InfoDescription>
+			</Standard>
+			<Building>
+				<BuildingCategoryName>11169</BuildingCategoryName>
+				<BuildModeRandomRotation>90</BuildModeRandomRotation>
+				<AssociatedRegions>Moderate</AssociatedRegions>
+			</Building>
+			<Blocking />
+			<Cost>
+				<Costs>
+					<Item>
+						<Ingredient>1010017</Ingredient>
+						<Amount>125000</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010196</Ingredient>
+						<Amount>120</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010205</Ingredient>
+						<Amount>250</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010218</Ingredient>
+						<Amount>100</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010207</Ingredient>
+						<Amount>50</Amount>
+					</Item>
+					<Item>
+						<Ingredient>1010202</Ingredient>
+						<Amount>60</Amount>
+					</Item>
+				</Costs>
+			</Cost>
+			<Object>
+				<Variations>
+					<Item>
+						<Filename>data/dlc03/graphics/buildings/special/electricity_02/electricity_02.cfg</Filename>
+					</Item>
+				</Variations>
+			</Object>
+			<Mesh />
+			<Selection>
+				<ParticipantMessageArcheType>Resident_tier03_atWork</ParticipantMessageArcheType>
+			</Selection>
+			<Text>
+				<LocaText>
+					<English>
+						<Text>Pellets Power Plant</Text>
+						<Status>Exported</Status>
+						<ExportCount>1</ExportCount>
+					</English>
+				</LocaText>
+				<LineID>35861</LineID>
+			</Text>
+			<Constructable />
+			<Locked />
+			<SoundEmitter>
+				<ActiveSounds>
+					<Item>
+						<Sound>200832</Sound>
+					</Item>
+				</ActiveSounds>
+				<IncidentSounds>
+					<InfectedFire>
+						<Item>
+							<Sound>214659</Sound>
+						</Item>
+					</InfectedFire>
+				</IncidentSounds>
+				<BuildingRepaired>
+					<Item>
+						<Sound>203866</Sound>
+					</Item>
+				</BuildingRepaired>
+			</SoundEmitter>
+			<FeedbackController />
+			<Infolayer />
+			<UpgradeList />
+			<LogisticNode>
+				<TransporterCountMax>2</TransporterCountMax>
+				<PathLayers>Street</PathLayers>
+			</LogisticNode>
+			<AmbientMoodProvider />
+			<Maintenance>
+				<Maintenances>
+					<Item>
+						<Product>1010017</Product>
+						<Amount>6250</Amount>
+						<InactiveAmount>800</InactiveAmount>
+					</Item>
+					<Item>
+						<Product>1010116</Product>
+						<Amount>350</Amount>
+						<ShutdownThreshold>0.5</ShutdownThreshold>
+					</Item>
+				</Maintenances>
+			</Maintenance>
+			<Attackable>
+				<MaximumHitPoints>2242</MaximumHitPoints>
+				<SelfHealPerHealTick>4</SelfHealPerHealTick>
+			</Attackable>
+			<Pausable />
+			<IncidentInfectable>
+				<Infectable>
+					<Fire>
+						<Base>1</Base>
+					</Fire>
+				</Infectable>
+				<Explosion>
+					<DamageExplosionChance>5</DamageExplosionChance>
+				</Explosion>
+				<IncidentInfectionChanceFactors>
+					<Fire>
+						<DensityDistance>10</DensityDistance>
+						<FactoryProductivityFactor>0.1</FactoryProductivityFactor>
+						<FactoryUndertimeFactor>0.05</FactoryUndertimeFactor>
+					</Fire>
+					<Explosion>
+						<BaseChance>5</BaseChance>
+					</Explosion>
+				</IncidentInfectionChanceFactors>
+			</IncidentInfectable>
+			<Powerplant>
+				<IndustrializationDistance>75</IndustrializationDistance>
+			</Powerplant>
+			<FactoryBase>
+				<FactoryInputs>
+					<Item>
+						<Product>1800000303</Product>
+						<Amount>1</Amount>
+						<StorageAmount>10</StorageAmount>
+					</Item>
+				</FactoryInputs>
+				<CycleTime>120</CycleTime>
+			</FactoryBase>
+			<Culture>
+				<Attractiveness>1</Attractiveness>
+                <CultureType>Culture</CultureType>
+			</Culture>
+			<PublicService>
+				<FullSatisfactionDistance>75</FullSatisfactionDistance>
+				<NoSatisfactionDistance>75</NoSatisfactionDistance>
+			</PublicService>
+		</Values>
+	</Asset>
+</ModOp>
+<!--###########################################################################################################################################################################-->
+<!--##################################################################################################################			 ADD BUILDINGS TO VANILLA BOOSTERS							##-->
+<ModOp Type="addNextSibling" GUID='193856' Path="/Values/ItemEffectTargetPool/EffectTargetGUIDs/Item[GUID='1010329']">
+	<Item>
+		<GUID>1800000306</GUID>
+	</Item>
+	<Item>
+		<GUID>1800000305</GUID>
+	</Item>
+</ModOp>
+<ModOp Type="addNextSibling" GUID='193879' Path="/Values/ItemEffectTargetPool/EffectTargetGUIDs/Item[GUID='1010329']">
+	<Item>
+		<GUID>1800000306</GUID>
+	</Item>
+	<Item>
+		<GUID>1800000305</GUID>
+	</Item>
+</ModOp>
+<ModOp Type="addNextSibling" GUID='6000018' Path="/Values/ItemEffectTargetPool/EffectTargetGUIDs/Item[GUID='1010329']">
+	<Item>
+		<GUID>1800000306</GUID>
+	</Item>
+	<Item>
+		<GUID>1800000305</GUID>
+	</Item>
+</ModOp>
+<ModOp Type="addNextSibling" GUID='190846' Path="/Values/ItemEffectTargetPool/EffectTargetGUIDs/Item[GUID='1010323']">
+	<Item>
+		<GUID>1800000306</GUID>
+	</Item>
+	<Item>
+		<GUID>1800000305</GUID>
+	</Item>
+</ModOp>
+<ModOp Type="addNextSibling" GUID='190778' Path="/Values/ItemEffectTargetPool/EffectTargetGUIDs/Item[GUID='101260']">
+	<Item>
+		<GUID>1800000306</GUID>
+	</Item>
+	<Item>
+		<GUID>1800000305</GUID>
+	</Item>
+</ModOp>
+<!--###########################################################################################################################################################################-->
+</ModOps>
